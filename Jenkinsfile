@@ -3,25 +3,25 @@ pipeline {
 
     stages {
 
-        stage('clone') {
+        stage('Checkout') {
             steps {
-                git 'https://github.com/sowjanya-it/Calculator.git'
+                echo 'Source Code Downloaded Successfully'
             }
         }
 
-        stage('compile') {
+        stage('Compile') {
             steps {
-                bat 'javac Calculator.java'
+                bat 'javac Hello.java'
             }
         }
 
-        stage('build') {
+        stage('Execute') {
             steps {
-                bat 'java Calculator'
+                bat 'java Hello'
             }
         }
 
-        stage('test') {
+        stage('Test') {
             steps {
                 echo 'Testing Completed'
             }
